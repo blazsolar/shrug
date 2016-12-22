@@ -12,6 +12,14 @@ solar.blaz.shrug.ShrugException: ¯\_(ツ)_/¯ What have I done!
         at solar.blaz.shrug.example.Example.main(Example.java:9)
 ```
 
+## Dependency
+
+```groovy
+dependencies {
+	compile "solar.blaz.shrug:shrug:1.0"
+}
+```
+
 ## License 
 
     MIT License

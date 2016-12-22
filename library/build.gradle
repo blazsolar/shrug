@@ -45,10 +45,10 @@ bintray {
             name = LIBRARY_VERSION
             released  = new Date()
 
-            mavenCentralSync {
-                user = project.hasProperty('sonatypeUsername') ? sonatypeUsername : ''
-                password = project.hasProperty('sonatypePassword') ? sonatypePassword : ''
-            }
+//            mavenCentralSync {
+//                user = project.hasProperty('sonatypeUsername') ? sonatypeUsername : ''
+//                password = project.hasProperty('sonatypePassword') ? sonatypePassword : ''
+//            }
         }
     }
     publications = ['bintray']
