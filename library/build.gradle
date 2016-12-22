@@ -1,0 +1,55 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+    id "com.jfrog.bintray" version "1.7.3"
+}
+
+group = LIBRARY_GROUP
+version = LIBRARY_VERSION
+
+task sourceJar(type: Jar) {
+    from sourceSets.main.allJava
+}
+
+publishing {
+    publications {
+        bintray(MavenPublication) {
+            from components.java
+            groupId LIBRARY_GROUP
+            artifactId project.name
+            version LIBRARY_VERSION
+
+            artifact sourceJar {
+                classifier "sources"
+            }
+        }
+    }
+}
+
+bintray {
+    user = hasProperty('bintrayUser') ? bintrayUser : ''
+    key = hasProperty('bintrayKey') ? bintrayKey : ''
+    pkg {
+        repo = 'maven'
+        name = project.name
+        licenses = ['Apache-2.0']
+        desc = 'When you just don\'t know and you need to throw something, throw ShrugException'
+        websiteUrl = 'https://github.com/blazsolar/shrug'
+        issueTrackerUrl = 'https://github.com/blazsolar/shrug/issues'
+        vcsUrl = 'https://github.com/blazsolar/shrug.git'
+
+        githubRepo = 'blazsolar/shrug'
+        githubReleaseNotesFile = 'CHANGELOG.md'
+
+        version {
+            name = LIBRARY_VERSION
+            released  = new Date()
+
+            mavenCentralSync {
+                user = project.hasProperty('sonatypeUsername') ? sonatypeUsername : ''
+                password = project.hasProperty('sonatypePassword') ? sonatypePassword : ''
+            }
+        }
+    }
+    publications = ['bintray']
+}

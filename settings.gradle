@@ -1,0 +1,5 @@
+include 'library', 'example'
+
+project(':library').name = LIBRARY_NAME
+
+rootProject.name = 'shrugException'

@@ -1,0 +1,9 @@
+plugins {
+    id 'application'
+}
+
+mainClassName = "solar.blaz.shrug.example.Example"
+
+dependencies {
+    compile project(":$LIBRARY_NAME")
+}
