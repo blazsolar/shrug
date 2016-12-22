@@ -32,7 +32,7 @@ bintray {
     pkg {
         repo = 'maven'
         name = project.name
-        licenses = ['Apache-2.0']
+        licenses = ['MIT']
         desc = 'When you just don\'t know and you need to throw something, throw ShrugException'
         websiteUrl = 'https://github.com/blazsolar/shrug'
         issueTrackerUrl = 'https://github.com/blazsolar/shrug/issues'
