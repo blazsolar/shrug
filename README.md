@@ -1,4 +1,4 @@
-# ¯\_(ツ)_/¯
+# ¯\\_(ツ)_/¯
 
 When you just don't know and you need to throw something, throw ShrugException.
 
