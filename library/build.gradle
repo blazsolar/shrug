@@ -27,8 +27,8 @@ publishing {
 }
 
 bintray {
-    user = hasProperty('bintrayUser') ? bintrayUser : ''
-    key = hasProperty('bintrayKey') ? bintrayKey : ''
+    user = project.hasProperty('bintrayUser') ? bintrayUser : ''
+    key = project.hasProperty('bintrayKey') ? bintrayKey : ''
     pkg {
         repo = 'maven'
         name = project.name
